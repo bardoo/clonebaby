@@ -1,0 +1,12 @@
+
+alias gp='git pull'
+alias gps='git push'
+alias gs='git status'
+alias gf='git fetch'
+alias gl='git lg'
+alias ga='git add .'
+alias gd='git diff'
+alias stash-pull='git stash && gp && git stash pop'
+alias stash-rebase='git stash && git rebase && git stash pop'
+
+alias mci='mvn clean install'
