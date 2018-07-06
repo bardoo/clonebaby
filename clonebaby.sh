@@ -32,6 +32,7 @@ binaries=(
   node
   maven
   tldr
+  tmux
 )
 
 # Install the binaries
@@ -44,16 +45,11 @@ brew tap caskroom/cask
 brew cleanup
 
 apps=(
-  alfred
-  dropbox
   google-chrome
   firefox
-  spotify
   java
-  sublime-text
   atom
   vlc
-  transmission
   slack
   qlcolorcode
   quicklook-json
@@ -61,7 +57,8 @@ apps=(
   qlstephen
   intellij-idea
   iterm2
-  polymail
+  tidal
+  postman
 )
 
 # Adding beta versions
@@ -72,11 +69,18 @@ brew cask install ${apps[@]}
 
 echo "Setting up zsh"
 curl -L http://install.ohmyz.sh | sh
-echo export PATH='/usr/local/bin:$(brew --prefix coreutils)/libexec/gnubin:$PATH' >> ~/.zshrc # <- TODO: Make idempotent
+# TODO: Make idempotent
+echo export PATH='/usr/local/bin:$(brew --prefix coreutils)/libexec/gnubin:$PATH' >> ~/.zshrc
+echo "\n. ~/.zsh_aliases" >> ~/.zshrc
+echo "\n\n# legger til autocomplete på . og ..\nzstyle ':completion:*' special-dirs true" >> ~/.zshrc
+# TODO: add plugins and thems
 
 #TODO: Dotfiles
 echo "Setting up VIM"
 cp -R dotfiles/.vim* ~
+cp dotfiles/.zsh_aliases ~
+
+# TODO: installing Vundle?
 
 echo "Settings.."
 defaults write com.apple.systemsound 'com.apple.sound.uiaudio.enabled' -int 0
