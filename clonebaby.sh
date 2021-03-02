@@ -80,6 +80,9 @@ cp dotfiles/.zsh_aliases ~
 
 # TODO: installing Vundle?
 
+# tmux plugin manager
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
 echo "Settings.."
 defaults write com.apple.systemsound 'com.apple.sound.uiaudio.enabled' -int 0
 defaults write NSGlobalDomain com.apple.sound.uiaudio.enabled -bool false
