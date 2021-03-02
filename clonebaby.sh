@@ -19,6 +19,8 @@ brew install coreutils
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
 brew install findutils
 
+brew install grep --default-names
+
 # Install Bash 4 (Hello Shellshock)
 brew install bash
 
@@ -30,9 +32,9 @@ binaries=(
   git
   hub
   node
-  maven
   tldr
   tmux
+  jq
 )
 
 # Install the binaries
@@ -46,19 +48,15 @@ brew cleanup
 
 apps=(
   google-chrome
-  firefox
-  java
   atom
   vlc
   slack
-  qlcolorcode
-  quicklook-json
-  qlmarkdown
-  qlstephen
-  intellij-idea
   iterm2
   tidal
   postman
+  blender
+  spectacle
+  authy
 )
 
 # Adding beta versions
@@ -71,7 +69,7 @@ echo "Setting up zsh"
 curl -L http://install.ohmyz.sh | sh
 # TODO: Make idempotent
 echo export PATH='/usr/local/bin:$(brew --prefix coreutils)/libexec/gnubin:$PATH' >> ~/.zshrc
-echo "\n. ~/.zsh_aliases" >> ~/.zshrc
+#echo "\n. ~/.zsh_aliases" >> ~/.zshrc
 echo "\n\n# legger til autocomplete på . og ..\nzstyle ':completion:*' special-dirs true" >> ~/.zshrc
 # TODO: add plugins and thems
 
@@ -98,7 +96,7 @@ defaults write com.apple.dock wvous-tl-corner -int 2
 defaults write com.apple.dock autohide -bool true
 killall Dock
 
-curl -s "https://get.sdkman.io" | sh
+# curl -s "https://get.sdkman.io" | sh
 
 #TODO: Clean up zsh aliases
 
